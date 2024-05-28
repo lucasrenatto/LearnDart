@@ -3,7 +3,7 @@ void main() {
   String nome = 'João da Silva'; // o Objeto é do tipo string
 
   // como nome já foi atribuido a um valor String não podemos alterar seu valor para um outro tipo de objeto:
-  nome = 2; // há erro.
+  nome = 2; // há erro.  
 
   // caso a gente queira uma valor mais flexivel podemos usar um Object como variavel ou Dynamic:
   dynamic nomeDois = 'Lucas da Silva';

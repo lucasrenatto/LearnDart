@@ -1,5 +1,4 @@
 void main() {
   bool verdade = true;
-  bool mentira = false;   
+  bool mentira = false;
 }
-  
