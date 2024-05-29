@@ -7,7 +7,7 @@ void main() {
   const String cidade = "São Paulo";
 
 //Porém um const não pode receber um valor externo que o compilador ainda não conhece:
-  const String nomeFuncao = _retornaNome();
+ // const String nomeFuncao = _retornaNome();
 // Para corrigir isso devo inserir o valor diretamente para que o compilador já conheça antes mesmo de sua execução:
   const String nomeDefinido = "Teste";
 
