@@ -12,4 +12,9 @@ class AccountModel {
   editBalance({required value}) {
     balance = balance + value;
   }
+
+  @override
+  String toString() {
+    return "O nome do dono da conta é: $name, o saldo atual é $balance e o usuário${isAuthenticated ? "" : " não"} está autenticado";
+  }
 }

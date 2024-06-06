@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'controllers/bank_controller.dart';
+import 'exceptions/bank_controller_exceptions.dart';
 import 'models/account_model.dart';
 
 void main(List<String> args) {
@@ -16,11 +19,26 @@ void main(List<String> args) {
           name: "Caio Couto", balance: 600, isAuthenticated: true));
 
   // Fazendo transferência
-  bool result = bankController.makeTransfer(
-      idSender: "Kako", idReceiver: "Ricarth", amount: 700);
+
+  try {
+    bool result = bankController.makeTransfer(
+        idSender: "Kako", idReceiver: "Ricarth", amount: 80000);
+    print(result);
+  } on SenderBalanceLowerThanAmountException catch (e, stackTrace) {
+    log(e.toString(), stackTrace: stackTrace);
+    print(e.amountRequired);
+    print(e.amountSend);
+    print(e);
+  } on SenderNotAuthenticated catch (e) {
+    print(e);
+  } on ReceiverIdInvalidException catch (e) {
+    print(e);
+  } on SendIdInvalidException catch (e) {
+    print(e);
+    log("teste");
+  }
 
   // Observando resultado
-  print(result);
 }
 
 // void main() {
