@@ -12,81 +12,107 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter: Primeiros Passos'),
+          title: const Text('Flutter: Meus primeiros passos'),
         ),
-        body: Container(
-          color: Colors.white,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        body: Text('Texto'),
+        floatingActionButton: FloatingActionButton(
+          onPressed: null,
+          child: Icon(Icons.new_label),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
             children: [
-              Container(
-                color: Colors.red,
-                height: 100,
-                width: 100,
-              ),
-              Container(
-                color: Colors.blue,
-                height: 100,
-                width: 100,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    color: Colors.cyan,
-                    height: 50,
-                    width: 50,
-                  ),
-                  Container(
-                    color: Colors.pinkAccent,
-                    height: 50,
-                    width: 50,
-                  ),
-                  Container(
-                    color: Colors.purple,
-                    height: 50,
-                    width: 50,
-                  ),
-                ],
-              ),
-              Container(
-                color: Colors.amber,
-                height: 30,
-                width: 300,
-                child: const Text(
-                  'Diamante Amarelo', // palavra aleatoria
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 28,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  print('Você apertou o Botão!');
-                },
-                child: const Text('Aperte o botão!!'),
-                style:
-                    ElevatedButton.styleFrom(backgroundColor: Colors.black87),
-              )
+              const IconButton(onPressed: null, icon: Icon(Icons.home)),
+              const IconButton(onPressed: null, icon: Icon(Icons.shop_2))
             ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print('Você apertou o FAB!');
-          },
-          child: const Icon(Icons.add),
         ),
       ),
     );
   }
 }
+
+
+
+
+// MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('Flutter: Primeiros Passos'),
+//         ),
+//         body: Container(
+//           color: Colors.white,
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Container(
+//                 color: Colors.red,
+//                 height: 100,
+//                 width: 100,
+//               ),
+//               Container(
+//                 color: Colors.blue,
+//                 height: 100,
+//                 width: 100,
+//               ),
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 children: [
+//                   Container(
+//                     color: Colors.cyan,
+//                     height: 50,
+//                     width: 50,
+//                   ),
+//                   Container(
+//                     color: Colors.pinkAccent,
+//                     height: 50,
+//                     width: 50,
+//                   ),
+//                   Container(
+//                     color: Colors.purple,
+//                     height: 50,
+//                     width: 50,
+//                   ),
+//                 ],
+//               ),
+//               Container(
+//                 color: Colors.amber,
+//                 height: 30,
+//                 width: 300,
+//                 child: const Text(
+//                   'Diamante Amarelo', // palavra aleatoria
+//                   style: TextStyle(
+//                     color: Colors.black,
+//                     fontSize: 28,
+//                   ),
+//                   textAlign: TextAlign.center,
+//                 ),
+//               ),
+//               ElevatedButton(
+//                 onPressed: () {
+//                   print('Você apertou o Botão!');
+//                 },
+//                 child: const Text('Aperte o botão!!'),
+//                 style:
+//                     ElevatedButton.styleFrom(backgroundColor: Colors.black87),
+//               )
+//             ],
+//           ),
+//         ),
+//         floatingActionButton: FloatingActionButton(
+//           onPressed: () {
+//             print('Você apertou o FAB!');
+//           },
+//           child: const Icon(Icons.add),
+//         ),
+//       ),
+//     );
