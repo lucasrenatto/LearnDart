@@ -17,16 +17,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter: Meus primeiros passos'),
         ),
-        body: Text('Texto'),
-        floatingActionButton: FloatingActionButton(
+        body: const Text('Texto'),
+        floatingActionButton: const FloatingActionButton(
           onPressed: null,
           child: Icon(Icons.new_label),
         ),
-        bottomNavigationBar: BottomAppBar(
+        bottomNavigationBar: const BottomAppBar(
           child: Row(
             children: [
-              const IconButton(onPressed: null, icon: Icon(Icons.home)),
-              const IconButton(onPressed: null, icon: Icon(Icons.shop_2))
+              IconButton(onPressed: null, icon: Icon(Icons.home)),
+              IconButton(onPressed: null, icon: Icon(Icons.shop_2))
             ],
           ),
         ),
