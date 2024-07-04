@@ -1,51 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class ShowsView extends StatefulWidget {
+  const ShowsView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<ShowsView> createState() => _ShowsViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _ShowsViewState extends State<ShowsView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(
-              fit: BoxFit.fill,
-              width: 18,
-              height: 38,
-              'assets/images/logo.png',
-            ),
-            const Text(
-              "Séries",
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            const Text(
-              "Filmes",
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            const Text(
-              "Minha Lista",
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
-        child: SingleChildScrollView(
-          child: Column(
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 12, 8, 8),
+      child: Column(
+        children: [
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
@@ -65,11 +35,17 @@ class _HomeViewState extends State<HomeView> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        Image.asset(
-                          fit: BoxFit.fill,
-                          height: 170,
-                          width: 115,
-                          'assets/images/covers/50-m2.jpg',
+                        GestureDetector(
+                          onTap: () => Navigator.of(context).pushNamed('/show'),
+                          child: Hero(
+                            tag: "50m2",
+                            child: Image.asset(
+                              fit: BoxFit.fill,
+                              height: 170,
+                              width: 115,
+                              'assets/images/covers/50-m2.jpg',
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           width: 8,
@@ -230,76 +206,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ],
           ),
-        ),
-      ),
-      bottomNavigationBar: const BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                Icon(Icons.home),
-                Text("Início"),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.search,
-                  color: Colors.white70,
-                ),
-                Text(
-                  "Buscar",
-                  style: TextStyle(
-                    color: Colors.white70,
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.play_circle_outlined,
-                  color: Colors.white70,
-                ),
-                Text(
-                  "Em Breve",
-                  style: TextStyle(
-                    color: Colors.white70,
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.download_sharp,
-                  color: Colors.white70,
-                ),
-                Text(
-                  "Downloads",
-                  style: TextStyle(
-                    color: Colors.white70,
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.menu,
-                  color: Colors.white70,
-                ),
-                Text(
-                  "Mais",
-                  style: TextStyle(
-                    color: Colors.white70,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:netflix/views/home-view.dart';
+import 'package:netflix/views/home/home-view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -39,7 +39,7 @@ class _SplashViewState extends State<SplashView>
     ));
 
     fakeLoading().then((_) {
-      Navigator.of(context).pushReplacementNamed('/home');
+      Navigator.of(context).pushReplacementNamed('/user-select');
     });
 
     Future.delayed(const Duration(milliseconds: 0))

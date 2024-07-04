@@ -10,10 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   audioplayers: ^6.0.0
-
   cupertino_icons: ^1.0.6
+  youtube_player_flutter: ^9.0.1
+  flutter_inappwebview: ^6.0.0
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +31,7 @@ flutter:
     - assets/images/logo.png
     - assets/images/logo-horizontal.png
     - assets/images/covers/
+    - assets/images/profile-pics/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:netflix/views/home-view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/shared/core-view.dart';
+import 'package:netflix/views/couter.dart';
+import 'package:netflix/views/home/home-view.dart';
+import 'package:netflix/views/name.dart';
+import 'package:netflix/views/search-view.dart';
+import 'package:netflix/views/shows/show-view.dart';
 import 'package:netflix/views/splash-view.dart';
+import 'package:netflix/views/user-select-view.dart';
 
 void main() {
   runApp(
@@ -23,8 +30,12 @@ void main() {
       ),
       routes: {
         '/home': (context) => const HomeView(),
+        '/user-select': (context) => const UserSelectView(),
+        '/search': (context) => const SearchView(),
+        '/core': (context) => const CoreView(),
+        '/show': (context) => const ShowView()
       },
-      home: const SplashView(),
+      home: const NameContainer(),
     ),
   );
 }
